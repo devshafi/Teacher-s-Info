@@ -53,7 +53,6 @@
 
     </RelativeLayout>
 
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAddTeacher"
         android:layout_width="wrap_content"
@@ -61,7 +60,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
-        android:src="@drawable/ic_add" />
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/colorPrimary"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
