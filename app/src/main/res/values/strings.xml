@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Teachers Info</string>
+    <string name="about">About Us</string>
+
+    <!--drawer toggle-->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="name">Name</string>
+    <string name="full_name_hint">Type Your Full Name</string>
+    <string name="designation_hint">Example: Associate Professior</string>
+    <string name="designation">Designation</string>
+    <string name="address">Address</string>
+    <string name="address_hint">Type Your Address</string>
+    <string name="expertise_in">Expertise In</string>
+    <string name="expertise_in_hint">Example: Mathematics</string>
+    <string name="email_address">Email Address</string>
+    <string name="email_hint">youremail@email.com</string>
+    <string name="contact_no">Contact No</string>
+    <string name="contact_no_hint">Example: +88 01xxx -xxxxxx</string>
+    <string name="enter_details">Enter Details</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="add_teacher">Add Teacher</string>
+
+</resources>
