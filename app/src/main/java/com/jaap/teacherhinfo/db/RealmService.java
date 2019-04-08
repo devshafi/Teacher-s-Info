@@ -5,6 +5,7 @@ import com.jaap.teacherhinfo.models.Person;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class RealmService {
     private Realm realm;
@@ -41,6 +42,17 @@ public class RealmService {
             @Override
             public void execute(Realm realm) {
                 person.deleteFromRealm();
+            }
+        });
+    }
+
+    //delete an existing teacher
+    public void deleteTeacherById(String id){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<Person> persons = realm.where(Person.class).equalTo("id",id).findAll();
+                persons.deleteAllFromRealm();
             }
         });
     }

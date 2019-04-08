@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onChange(RealmResults<Person> teachers) {
                 Log.d(TAG, "onChange: "+teachers.size());
                 teacherListAdapter.notifyDataSetChanged();
+                toggleRecyclerViewVisibility();
             }
         });
     }
@@ -137,5 +138,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }

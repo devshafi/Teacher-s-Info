@@ -25,5 +25,8 @@
     <string name="details">Details</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete ?</string>
+    <string name="ok">OK</string>
+    <string name="teacher_deleted_successfully">Teacher deleted successfully !</string>
 
 </resources>

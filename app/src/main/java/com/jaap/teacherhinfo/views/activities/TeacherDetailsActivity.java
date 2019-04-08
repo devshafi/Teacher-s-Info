@@ -1,16 +1,26 @@
 package com.jaap.teacherhinfo.views.activities;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialog;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.jaap.teacherhinfo.R;
+import com.jaap.teacherhinfo.db.RealmService;
 import com.jaap.teacherhinfo.models.Person;
+
+import io.realm.Realm;
 
 public class TeacherDetailsActivity extends AppCompatActivity {
 
@@ -25,7 +35,13 @@ public class TeacherDetailsActivity extends AppCompatActivity {
     AppCompatTextView tvEmailAddress;
     AppCompatTextView tvMobile;
 
+    AppCompatImageView ivCall;
+    AppCompatImageView ivMessage;
+
+
     Person person;
+    Realm realm;
+    RealmService  realmService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +52,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         initialSetup();
         setSupportActionBar(toolbar);
         setValueInViews();
+        captureClickListener();
 
     }
 
@@ -53,6 +70,27 @@ public class TeacherDetailsActivity extends AppCompatActivity {
             case R.id.action_edit:
                 break;
             case R.id.action_delete:
+                AppCompatDialog dialog;
+                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
+                builder.setTitle(R.string.are_you_sure_you_want_to_delete);
+                builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        realmService.deleteTeacherById(person.getId());
+                        Toast.makeText(TeacherDetailsActivity.this, getString(R.string.teacher_deleted_successfully), Toast.LENGTH_SHORT).show();
+                        dialogInterface.dismiss();
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog = builder.create();
+                dialog.show();
+
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -71,6 +109,10 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         tvExpertIn = findViewById(R.id.tvExpertIn);
         tvEmailAddress = findViewById(R.id.tvEmailAddress);
         tvMobile = findViewById(R.id.tvMobile);
+
+        realm = Realm.getDefaultInstance();
+        realmService = new RealmService(realm);
+
     }
 
     //method for setup value in views
@@ -82,5 +124,41 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         tvExpertIn.setText(person.getExpertiseIn());
         tvEmailAddress.setText(person.getEmailAddress());
         tvMobile.setText(person.getMobileNo());
+        ivCall =  findViewById(R.id.ivCall);
+        ivMessage = findViewById(R.id.ivMessage);
+    }
+
+    //method for capturing click listener
+    public void captureClickListener(){
+
+        ivCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeCall(person.getMobileNo());
+            }
+        });
+
+        ivMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendSMS(person.getMobileNo());
+            }
+        });
+    }
+
+    // method for making a call
+    public void makeCall(String number){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:"+number));
+        startActivity(intent);
+    }
+
+    // method for making a call
+    public void sendSMS(String number){
+
+        Uri uri = Uri.parse("smsto:"+number);
+        Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+        startActivity(intent);
+
     }
 }
