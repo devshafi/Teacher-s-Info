@@ -31,16 +31,16 @@ public class GeneratePersonList {
 
         ArrayList<Person> personArrayList = new ArrayList<>();
 
-        personArrayList.add(person1);
-        personArrayList.add(person2);
-        personArrayList.add(person3);
-        personArrayList.add(person4);
-        personArrayList.add(person5);
-        personArrayList.add(person6);
-        personArrayList.add(person7);
-        personArrayList.add(person8);
-        personArrayList.add(person9);
-        personArrayList.add(person10);
+//        personArrayList.add(person1);
+//        personArrayList.add(person2);
+//        personArrayList.add(person3);
+//        personArrayList.add(person4);
+//        personArrayList.add(person5);
+//        personArrayList.add(person6);
+//        personArrayList.add(person7);
+//        personArrayList.add(person8);
+//        personArrayList.add(person9);
+//        personArrayList.add(person10);
 
         return personArrayList;
 

@@ -20,5 +20,10 @@
     <string name="enter_details">Enter Details</string>
     <string name="add_photo">Add Photo</string>
     <string name="add_teacher">Add Teacher</string>
+    <string name="no_teacher_in_list">No teacher in list yet !</string>
+    <string name="new_teacher_added_successfully">New teacher added successfully!</string>
+    <string name="details">Details</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
 </resources>

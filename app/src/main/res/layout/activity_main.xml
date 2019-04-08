@@ -4,12 +4,14 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="false">
+
 
     <include
         layout="@layout/main_activity_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 
     <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
     <android.support.design.widget.NavigationView
@@ -17,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
+        android:fitsSystemWindows="false"
         app:menu="@menu/drawer_view" />
 
 </android.support.v4.widget.DrawerLayout>

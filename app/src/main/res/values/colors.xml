@@ -7,4 +7,5 @@
     <color name="text_color">#212121</color>
     <color name="color_transparent">#00000000</color>
     <color name="color_android_default">#fafafa</color>
+    <color name="custom_black">#8B8181</color>
 </resources>

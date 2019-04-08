@@ -53,7 +53,8 @@
                 android:textSize="@dimen/text_size_small"
                 android:layout_gravity="center_horizontal"
                 android:background="?selectableItemBackground"
-                />
+                android:clickable="true"
+                android:focusable="true"/>
 
 
             <android.support.v7.widget.AppCompatTextView
@@ -78,6 +79,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etFullName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -103,6 +106,7 @@
                         android:textSize="@dimen/text_size_small"
                         app:fontFamily="@font/roboto_light"
                         tools:ignore="RtlSymmetry" />
+
                 </FrameLayout>
 
                 <FrameLayout
@@ -114,6 +118,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etDesignation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -150,6 +156,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -186,6 +194,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etExpertIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -222,6 +232,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -259,6 +271,8 @@
                     android:layout_marginEnd="@dimen/margin_large">
 
                     <android.support.v7.widget.AppCompatEditText
+
+                        android:id="@+id/etMobileNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="50dp"
@@ -291,6 +305,8 @@
 
 
             <android.support.v7.widget.AppCompatButton
+
+                android:id="@+id/btAddTeacher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/add_teacher"

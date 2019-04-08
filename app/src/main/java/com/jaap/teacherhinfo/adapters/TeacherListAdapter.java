@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.jaap.teacherhinfo.R;
 import com.jaap.teacherhinfo.models.Person;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -19,12 +19,14 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
 
 
     private Context context;
-    private ArrayList<Person> userArrayList;
+    private List<Person> userArrayList;
+    private OnSingleItemSelected onSingleItemSelected;
 
-    public TeacherListAdapter(Context context,ArrayList<Person> userArrayList){
+    public TeacherListAdapter(Context context,List<Person> userArrayList, OnSingleItemSelected onSingleItemSelected){
 
         this.context =  context;
         this.userArrayList = userArrayList;
+        this.onSingleItemSelected = onSingleItemSelected;
     }
 
     @NonNull
@@ -54,6 +56,13 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
 
         VieHolder(@NonNull View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onSingleItemSelected.onSingleItemSelected(userArrayList.get(getAdapterPosition()));
+                }
+            });
         }
 
         CircleImageView ivUserPhoto = itemView.findViewById(R.id.ivUserPhoto);
@@ -61,10 +70,14 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
         AppCompatTextView tvDesignation = itemView.findViewById(R.id.tvDesignation);
 
 
-
     }
     //endregion
 
+    // region interface for item selection
+    public interface OnSingleItemSelected {
+        void onSingleItemSelected(Person person);
+    }
+    //endregion
 
 
 }
