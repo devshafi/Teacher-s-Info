@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class AddNewTeacherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_teacher);
 
-        // connecting the views
+        // initializing the views
         etFullName = findViewById(R.id.etFullName);
         etDesignation = findViewById(R.id.etDesignation);
         etAddress = findViewById(R.id.etAddress);
@@ -63,28 +64,59 @@ public class AddNewTeacherActivity extends AppCompatActivity {
     // if any field is empty let user know it
     public void validateUserData(){
 
-        String fullName = etFullName.getText().toString();
-        String designation = etDesignation.getText().toString();
-        String address =  etAddress.getText().toString();
-        String expertIn = etExpertIn.getText().toString();
-        String email =  etEmail.getText().toString();
-        String mobileNo = etMobileNo.getText().toString();
+        String fullName = etFullName.getText().toString().trim();
+        String designation = etDesignation.getText().toString().trim();
+        String address =  etAddress.getText().toString().trim();
+        String expertIn = etExpertIn.getText().toString().trim();
+        String email =  etEmail.getText().toString().trim();
+        String mobileNo = etMobileNo.getText().toString().trim();
 
         if(TextUtils.isEmpty(fullName)){
-            Toast.makeText(this, "Your fullName field is empty!", Toast.LENGTH_SHORT).show();
-        }if(TextUtils.isEmpty(designation)){
-            Toast.makeText(this, "Your designation field is empty!", Toast.LENGTH_SHORT).show();
-        }if(TextUtils.isEmpty(address)){
-            Toast.makeText(this, "Your address field is empty!", Toast.LENGTH_SHORT).show();
-        }if(TextUtils.isEmpty(expertIn)){
-            Toast.makeText(this, "Your expertIn field is empty!", Toast.LENGTH_SHORT).show();
-        }if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "Your email field is empty!", Toast.LENGTH_SHORT).show();
-        }if(TextUtils.isEmpty(mobileNo)){
-            Toast.makeText(this, "Your mobileNo field is empty!", Toast.LENGTH_SHORT).show();
+            etFullName.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
         }else{
+            etFullName.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+        if(TextUtils.isEmpty(designation)){
+            etDesignation.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+        }else{
+            etDesignation.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+        if(TextUtils.isEmpty(address)){
+            etAddress.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+        }else{
+            etAddress.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+        if(TextUtils.isEmpty(expertIn)){
+            etExpertIn.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+        }else{
+            etExpertIn.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+        if(TextUtils.isEmpty(email)){
+            etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+        }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
 
-            // everything is fine, add teacher to database
+            etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+            Toast.makeText(this, getString(R.string.invalid_email_foramt), Toast.LENGTH_SHORT).show();
+        }
+        else{
+            etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+        if(TextUtils.isEmpty(mobileNo)){
+            etMobileNo.setBackgroundDrawable(getResources().getDrawable(R.drawable.border_danger));
+        }else{
+            etMobileNo.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+        }
+
+        // show one or more fields are empty
+        if(TextUtils.isEmpty(fullName) || TextUtils.isEmpty(designation) || TextUtils.isEmpty(address)
+        || TextUtils.isEmpty(expertIn) || TextUtils.isEmpty(email) || TextUtils.isEmpty(mobileNo)){
+            Toast.makeText(this, getString(R.string.oner_or_more_fields_are_empty), Toast.LENGTH_SHORT).show();
+        }
+
+        // everything is fine, add teacher to database
+        if(!TextUtils.isEmpty(fullName) && !TextUtils.isEmpty(designation) && !TextUtils.isEmpty(address)
+        && !TextUtils.isEmpty(expertIn) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(mobileNo)
+        && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Person person = new Person(fullName,designation,address,expertIn,email,mobileNo);
             realmService.addNewTeacher(person);
             Toast.makeText(this, getString(R.string.new_teacher_added_successfully), Toast.LENGTH_SHORT).show();

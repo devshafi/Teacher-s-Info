@@ -46,7 +46,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_details_activty);
+        setContentView(R.layout.activity_teacher_details);
         person = getIntent().getParcelableExtra(PERSON_INTENT_KEY);
         Log.d(TAG, "onCreate: " + person);
         initialSetup();
