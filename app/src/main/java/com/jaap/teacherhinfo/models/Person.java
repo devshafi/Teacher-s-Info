@@ -44,6 +44,9 @@ public class Person extends RealmObject implements Parcelable {
         this.profileImage = profileImage;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getId(){
         return this.id;
     }

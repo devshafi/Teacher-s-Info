@@ -21,6 +21,8 @@ import com.jaap.teacherhinfo.db.RealmService;
 import com.jaap.teacherhinfo.models.Person;
 
 import io.realm.Realm;
+import io.realm.RealmChangeListener;
+import io.realm.RealmModel;
 
 public class TeacherDetailsActivity extends AppCompatActivity {
 
@@ -40,6 +42,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
 
 
     Person person;
+    String personId;
     Realm realm;
     RealmService  realmService;
 
@@ -47,15 +50,23 @@ public class TeacherDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_details);
-        person = getIntent().getParcelableExtra(PERSON_INTENT_KEY);
         Log.d(TAG, "onCreate: " + person);
         initialSetup();
         setSupportActionBar(toolbar);
         setValueInViews();
         captureClickListener();
 
+        person.addChangeListener(new RealmChangeListener<RealmModel>() {
+            @Override
+            public void onChange(RealmModel realmModel) {
+                setValueInViews();
+            }
+        });
+
     }
 
+
+    // enabling menu option in app
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -64,10 +75,14 @@ public class TeacherDetailsActivity extends AppCompatActivity {
     }
 
 
+    // activating menu option
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_edit:
+                Intent intent = new Intent(TeacherDetailsActivity.this,EditTeacherInfoActivity.class);
+                intent.putExtra(EditTeacherInfoActivity.PERSON_INTENT_KEY,person);
+                startActivity(intent);
                 break;
             case R.id.action_delete:
                 AppCompatDialog dialog;
@@ -109,9 +124,13 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         tvExpertIn = findViewById(R.id.tvExpertIn);
         tvEmailAddress = findViewById(R.id.tvEmailAddress);
         tvMobile = findViewById(R.id.tvMobile);
+        ivCall =  findViewById(R.id.ivCall);
+        ivMessage = findViewById(R.id.ivMessage);
 
         realm = Realm.getDefaultInstance();
         realmService = new RealmService(realm);
+        personId = getIntent().getStringExtra(PERSON_INTENT_KEY);
+        person = realmService.getASingleTeacher(personId);
 
     }
 
@@ -124,8 +143,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         tvExpertIn.setText(person.getExpertiseIn());
         tvEmailAddress.setText(person.getEmailAddress());
         tvMobile.setText(person.getMobileNo());
-        ivCall =  findViewById(R.id.ivCall);
-        ivMessage = findViewById(R.id.ivMessage);
+
     }
 
     //method for capturing click listener
@@ -160,5 +178,11 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
         startActivity(intent);
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
     }
 }

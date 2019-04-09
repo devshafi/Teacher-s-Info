@@ -36,5 +36,7 @@
     <string name="oner_or_more_fields_are_empty">One or more fields are empty !</string>
     <string name="invalid_email_foramt">Invalid email format !</string>
     <string name="cancel">CANCEL</string>
+    <string name="edit_teacher_information">Edit teacher Information</string>
+    <string name="info_updated_successully">Info updated successfully !</string>
 
 </resources>

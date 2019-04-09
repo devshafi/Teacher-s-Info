@@ -116,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
         teacherList = (RealmResults<Person>) realmService.getAllTeacher();
         teacherListAdapter = new TeacherListAdapter(this, teacherList, new TeacherListAdapter.OnSingleItemSelected() {
             @Override
-            public void onSingleItemSelected(Person person) {
+            public void onSingleItemSelected(String personId) {
                 Intent intent = new Intent(MainActivity.this,TeacherDetailsActivity.class);
-                intent.putExtra(TeacherDetailsActivity.PERSON_INTENT_KEY,person);
+                intent.putExtra(TeacherDetailsActivity.PERSON_INTENT_KEY,personId);
                 startActivity(intent);
             }
         });

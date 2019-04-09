@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,35 +20,35 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                android:src="@drawable/ic_profile_default"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
+                android:src="@drawable/ic_profile_default"
                 app:civ_border_color="@color/colorPrimary"
-                app:civ_border_width="2dp"/>
+                app:civ_border_width="2dp" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:text="@string/change_photo"
-                android:drawableEnd="@drawable/ic_add_photo_colored"
-                android:drawablePadding="@dimen/padding_small"
-                android:gravity="center_vertical"
-                app:fontFamily="@font/roboto_light"
-                android:textSize="@dimen/text_size_small"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:drawableEnd="@drawable/ic_add_photo_colored"
+                android:drawablePadding="@dimen/padding_small"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="@string/change_photo"
+                android:textSize="@dimen/text_size_small"
+                app:fontFamily="@font/roboto_light" />
 
 
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_details"
-                android:layout_marginTop="@dimen/margin_large"
                 android:layout_marginStart="@dimen/margin_large"
-                app:fontFamily="@font/roboto_light"/>
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/enter_details"
+                app:fontFamily="@font/roboto_light" />
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -57,34 +58,34 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etFullName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/full_name_hint"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/name"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -96,34 +97,34 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etDesignation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/designation_hint"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/designation"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -134,34 +135,34 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/address_hint"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/address"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -172,34 +173,34 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etExpertIn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/expertise_in_hint"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/expertise_in"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -210,35 +211,35 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/email_hint"
                         android:inputType="textEmailAddress"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/email_address"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -249,35 +250,35 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_large"
-                    android:layout_marginEnd="@dimen/margin_large">
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_medium">
 
                     <android.support.v7.widget.AppCompatEditText
 
                         android:id="@+id/etMobileNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="50dp"
                         android:layout_marginTop="@dimen/margin_medium"
-                        android:paddingStart="@dimen/padding_large"
-                        android:paddingEnd="@dimen/padding_large"
-                        android:paddingTop="@dimen/padding_medium"
-                        android:paddingBottom="@dimen/padding_medium"
                         android:background="@drawable/border"
                         android:hint="@string/contact_no_hint"
                         android:inputType="phone"
+                        android:minHeight="50dp"
+                        android:paddingStart="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_medium"
+                        android:paddingEnd="@dimen/padding_large"
+                        android:paddingBottom="@dimen/padding_medium"
                         android:textSize="@dimen/text_size_small"
-                        app:fontFamily="@font/roboto"/>
+                        app:fontFamily="@font/roboto" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_large"
+                        android:background="@color/color_android_default"
                         android:paddingStart="@dimen/padding_small"
                         android:paddingEnd="@dimen/padding_small"
-                        android:background="@color/color_android_default"
                         android:text="@string/contact_no"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/text_size_small"
@@ -293,12 +294,12 @@
                 android:id="@+id/btUpdateInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/update_info"
-                app:backgroundTint="@color/colorPrimary"
-                android:textColor="@color/color_android_default"
-                android:fontFamily="@font/roboto_bold"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/margin_medium"/>
+                android:layout_margin="@dimen/margin_medium"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/update_info"
+                android:textColor="@color/color_android_default"
+                app:backgroundTint="@color/colorPrimary" />
 
         </android.support.v7.widget.LinearLayoutCompat>
 

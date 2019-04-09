@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.design.widget.CoordinatorLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +31,8 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:title="@string/edit_teacher_information">
                 </android.support.v7.widget.Toolbar>
 
             </android.support.v7.widget.LinearLayoutCompat>
@@ -42,14 +44,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_medium"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <include
-            layout="@layout/edit_teacher_info_fragment_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            layout="@layout/edit_teacher_info_layout_content"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
 
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
+
+

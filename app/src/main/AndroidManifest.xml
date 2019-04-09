@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.activities.TeacherDetailsActivity"></activity>
+        <activity android:name=".views.activities.EditTeacherInfoActivity"></activity>
+        <activity android:name=".views.activities.TeacherDetailsActivity" />
         <activity android:name=".views.activities.AddNewTeacherActivity" />
         <activity android:name=".views.activities.MainActivity">
             <intent-filter>

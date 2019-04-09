@@ -60,7 +60,7 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onSingleItemSelected.onSingleItemSelected(userArrayList.get(getAdapterPosition()));
+                    onSingleItemSelected.onSingleItemSelected(userArrayList.get(getAdapterPosition()).getId());
                 }
             });
         }
@@ -75,7 +75,7 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
 
     // region interface for item selection
     public interface OnSingleItemSelected {
-        void onSingleItemSelected(Person person);
+        void onSingleItemSelected(String personId);
     }
     //endregion
 
