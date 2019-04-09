@@ -82,7 +82,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -153,7 +153,7 @@ public class TeacherDetailsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // method for making a call
+    // method for sending sms
     public void sendSMS(String number){
 
         Uri uri = Uri.parse("smsto:"+number);
